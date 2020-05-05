@@ -76,16 +76,5 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## groups_messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :message
-
 
 
