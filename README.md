@@ -32,7 +32,7 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 
 ### Association
-- belongs_to :messages
+- has_many :messages
 - has_many :groups
 
 
