@@ -5,35 +5,17 @@
         = current_user.name
       %ul.top-items__icons
         %li.top-items__icons__list
-          = link_to "#", class: "icon-btn edit" do
+          = link_to  new_group_path, class: "icon-btn edit" do
             %i.far.fa-edit
         %li.top-items__icons__list 
           = link_to edit_user_path(current_user), class: "icon-btn cog" do
             %i.fas.fa-cog
   .side-bar__group-list
-    %ul.group-menu
-      %li.group-menu__list
-        %p.group-menu__list__group-name
-          tech-camp
-        %p.group-menu__list__group-message
-          まだメッセージがありません
-      %li.group-menu__list
-        %p.group-menu__list__group-name
-          tech-camp
-        %p.group-menu__list__group-message
-          まだメッセージがありません
-      %li.group-menu__list
-        %p.group-menu__list__group-name
-          tech-camp
-        %p.group-menu__list__group-message
-          まだメッセージがありません
-      %li.group-menu__list
-        %p.group-menu__list__group-name
-          tech-camp
-        %p.group-menu__list__group-message
-          まだメッセージがありません
-      %li.group-menu__list
-        %p.group-menu__list__group-name
-          tech-camp
-        %p.group-menu__list__group-message
-          まだメッセージがありません
+    - current_user.groups.each do |group|
+      %ul.group-menu
+        %li.group-menu__list
+          %p.group-menu__list__group-name
+            = link_to '#' do
+              = group.name
+          %p.group-menu__list__group-message
+            まだメッセージがありません
