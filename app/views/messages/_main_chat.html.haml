@@ -3,49 +3,36 @@
     %ul.info-menu
       %li.info-menu__group-info
         %p.group-info--name
-          test
+          = @group.name
         %p.group-info--member
           Member: masa
       %li.info-menu__group-info
         = link_to "#", class: "group-info--edit" do
           Edit
   .chat-main__message-list
-    %ul.post-menu
-      %li.post-menu__list
-        %ul.post-detail
-          %li.post-detail__user-name
-            masa
-          %li.post-detail__post-date
-            2019/11/20(Wed) 17:43:01
-        %p.post-content
-          おはよう!
-      %li.post-menu__list
-        %ul.post-detail
-          %li.post-detail__user-name
-            masa
-          %li.post-detail__post-date
-            2019/11/20(Wed) 17:43:01
-        %p.post-content
-          おはよう!
-      %li.post-menu__list
-        %ul.post-detail
-          %li.post-detail__user-name
-            masa
-          %li.post-detail__post-date
-            2019/11/20(Wed) 17:43:01
-        %p.post-content
-          おはよう!
+    .messages
+      = render @messages
+  -# .chat-main__message-list
+  -#   %ul.post-menu
+  -#     %li.post-menu__list
+  -#       %ul.post-detail
+  -#         %li.post-detail__user-name
+  -#           masa
+  -#         %li.post-detail__post-date
+  -#           2019/11/20(Wed) 17:43:01
+  -#       %p.post-content
+  -#         おはよう!
 
   .chat-main__message-form
     %form.new_message
-      .input-box
-        = form_for [@group, @message] do |f|
+      = form_for [@group, @message] do |f|  
+        .input-box
           = f.text_field :text, class: 'input-box__text', placeholder: 'type a message'
-          = f.label :image, class: 'input-box__image' do
+          = f.label :file, class: 'input-box__image' do
             = icon('fas', 'image')
-            = f.file_field :image, class: 'input-box__image__file'
-          = f.submit 'Send', class: 'submit-btn'
-      
+            = f.file_field :file, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
+
   -# .chat-main__message-form
   -#   %form.new_message
   -#     .input-box
