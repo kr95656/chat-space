@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # add font-awesome-sass
  gem 'font-awesome-sass'
+
+gem 'carrierwave'
+gem 'mini_magick'
