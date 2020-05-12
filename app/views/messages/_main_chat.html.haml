@@ -4,8 +4,9 @@
       %li.info-menu__group-info
         %p.group-info--name
           = @group.name
-        %p.group-info--member
-          Member: masa
+        %ul.group-info--member
+          - @group.users.each do |user|
+            %li.group-info--member__list= user.name
       %li.info-menu__group-info
         = link_to "#", class: "group-info--edit" do
           Edit
