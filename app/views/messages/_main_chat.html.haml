@@ -10,19 +10,10 @@
       %li.info-menu__group-info
         = link_to edit_group_path(@group.id), class: "group-info--edit" do
           Edit
+          
   .chat-main__message-list
     .messages
       = render @messages
-  -# .chat-main__message-list
-  -#   %ul.post-menu
-  -#     %li.post-menu__list
-  -#       %ul.post-detail
-  -#         %li.post-detail__user-name
-  -#           masa
-  -#         %li.post-detail__post-date
-  -#           2019/11/20(Wed) 17:43:01
-  -#       %p.post-content
-  -#         おはよう!
 
   .chat-main__message-form
     .new_message
