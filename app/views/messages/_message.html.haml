@@ -1,11 +1,12 @@
-%ul.post-menu
-  %li.post-menu__list
-    %ul.post-detail
-      %li.post-detail__user-name
-        = message.user.name
-      %li.post-detail__post-date
-        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  - if message.text.present?
-    %p.post-content
-      = message.text
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.message{data: {message: {id: message.id}}}
+  %ul.post-menu
+    %li.post-menu__list
+      %ul.post-detail
+        %li.post-detail__user-name
+          = message.user.name
+        %li.post-detail__post-date
+          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    - if message.text.present?
+      %p.post-content
+        = message.text
+        = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
