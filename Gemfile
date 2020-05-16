@@ -62,11 +62,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # erbs files were changed to haml
- gem 'haml-rails'
+gem 'haml-rails'
 
 # add font-awesome-sass
- gem 'font-awesome-sass'
+gem 'font-awesome-sass'
 
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
