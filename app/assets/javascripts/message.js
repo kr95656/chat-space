@@ -60,10 +60,10 @@ $(function(){
     })
     .done (function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
+      $('.chat-main__message-list').append(html);
       $('form')[0].reset();
       $('.submit-btn').prop('disabled', false);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
     })
     .fail (function(){
       alert("メッセージ送信に失敗しました");
@@ -84,8 +84,8 @@ $(function(){
         $.each(messages, function(index, message){
           insertHtml += buildHTML(message)
         });
-        $('.messages').append(insertHtml);
-        $('.messages').animate({scrollTop: $('.message')[0].scrollHeight});
+        $('.chat-main__message-list').append(insertHtml);
+        $('.chat-main__message-list').animate({scrollTop: $('.chat-main__message-list')[0].scrollHeight});
       }
     })
     .fail(function(){
