@@ -56,6 +56,9 @@ $btn-color: #38aef0;
         &__list {
           &__group-name {
             font-size: 15px;
+            a{
+              text-decoration: none;
+            }
           }
           &__group-message {
             font-size: 11px;
