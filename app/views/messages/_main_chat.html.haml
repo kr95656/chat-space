@@ -6,7 +6,7 @@
           = @group.name
         %ul.group-info--member
           - @group.users.each do |user|
-            %li.group-info--member__list= user.name
+            %li.group-info--member__list= "Member : #{user.name}"
       %li.info-menu__group-info
         = link_to edit_group_path(@group.id), class: "group-info--edit" do
           Edit
