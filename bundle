@@ -1,0 +1,25 @@
+00:00 deploy:upload
+      Uploading config/secrets.yml 100.0%
+00:00 git:wrapper
+      01 mkdir -p /tmp
+    ✔ 01 ec2-user@52.196.77.15 0.206s
+      Uploading /tmp/git-ssh-chat-space-production-kamimura.sh 100.0%
+      02 chmod 700 /tmp/git-ssh-chat-space-production-kamimura.sh
+    ✔ 02 ec2-user@52.196.77.15 0.210s
+00:01 git:check
+      01 git ls-remote git@github.com:kr95656/chat-space.git HEAD
+      01 3051312c967699904c6233dcae2963afb37de018	HEAD
+    ✔ 01 ec2-user@52.196.77.15 2.459s
+00:03 deploy:check:directories
+      01 mkdir -p /var/www/chat-space/shared /var/www/chat-space/releases
+    ✔ 01 ec2-user@52.196.77.15 0.501s
+00:04 deploy:check:linked_dirs
+      01 mkdir -p /var/www/chat-space/shared/log /var/www/chat-space/shared/tmp/pids /var/www/chat-space/shared/tmp/cache /var/www/chat-space/shared/tmp/sockets /var/www/chat-space/shared/vendor/bundle /var/www/chat-space/shared/public/system /var/www/chat-space/shared/public/uploads /var/www/chat-space/shared/public/assets
+    ✔ 01 ec2-user@52.196.77.15 0.330s
+00:04 deploy:check:make_linked_dirs
+      01 mkdir -p /var/www/chat-space/shared/config
+    ✔ 01 ec2-user@52.196.77.15 0.380s
+00:06 git:clone
+      The repository mirror is at /var/www/chat-space/repo
+00:06 git:update
+      01 git remote set-url origin git@github.com:kr95656/chat-space.git
